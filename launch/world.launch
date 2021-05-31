@@ -1,0 +1,18 @@
+<launch>
+
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch">
+  </include>
+
+
+  <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+  </include>
+  
+  
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+  </include>
+  
+  <include file="$(find tuw_voronoi_graph)/launch/graph_generator.launch">
+  </include>
+
+
+</launch>
