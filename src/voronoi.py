@@ -294,10 +294,7 @@ class voronoi:
 
         self.nodes = []
         
-
-        #print(msg.origin)
         self.started = True  
-        #self.plotVoronoi()
         self.plotTreeVer()
 
     def plotTreeVer(self):
