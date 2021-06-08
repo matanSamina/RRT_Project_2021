@@ -43,7 +43,6 @@ def calcProb(nodesAstar, point):
             dist = distFromNode
 
     y = multivariate_normal.pdf(point, mean=np.array([minDistNode.x,minDistNode.y]) , cov=minDistNode.cov)#*minDistNode.w
-    #print(y*minDistNode.w)
     return y
 
 def MPFsampling(nodesAstar, xmin, xmax, ymin, ymax):
@@ -92,8 +91,6 @@ def MPFsampling(nodesAstar, xmin, xmax, ymin, ymax):
     
 
 
-
-
 def getX(z):
     return z.x
 
@@ -134,23 +131,25 @@ class voronoi:
      
         while not rospy.is_shutdown():
             
+            nodes = None 
+
             if self.Target and self.voronoiGraph:
                 
                 for path in self.ver: 
 
                     xList = list(map(getX , path.path))
                     yList = list(map(getY , path.path)) 
-                    plt.scatter(xList, yList , c="gray")
+                    # plt.scatter(xList, yList , c="gray")
                 
                 # PLOT MAP
                 if self.mapLM is not None:
                     maplM = self.mapLM
                     mapR = rotate(maplM  ,270)
                     mapR[:,0] = -1*mapR[:,0]
-                    plt.scatter(mapR[:,0],mapR[:,1])
+                    # plt.scatter(mapR[:,0],mapR[:,1])
 
                 
-                plt.scatter(self.Tx , self.Ty)
+                # plt.scatter(self.Tx , self.Ty)
                 result = self.result
 
 
@@ -161,7 +160,7 @@ class voronoi:
 
                     for node in result:
                         parent = node
-                        plt.plot([successor.x, parent.x], [successor.y, parent.y] , linewidth=5 , color = 'green')
+                        # plt.plot([successor.x, parent.x], [successor.y, parent.y] , linewidth=5 , color = 'green')
                         successor = node
 
 
@@ -169,14 +168,12 @@ class voronoi:
                 resultRe = result[::-1]
                 d = 0.1
                 # wigths for sampling algorithm (MPF)
-                wigths = np,linspace(0 , 100000 , resultLen)
+                wigths = np.linspace(0 , 1000 , resultLen)
                 for node, W in zip(resultRe , wigths):
                     node.w = W
                     # add cov matrix 
                     node.cov = np.array([[d/3, 0], [0, d/3]])
 
-
-                point = np.array([0 , 0])
                 #UNIFORM sampling 
                 xmin , xmax = min(mapR[:,0]) , max(mapR[:,0])
                 ymin , ymax = min(mapR[:,1]) , max(mapR[:,1])
@@ -210,34 +207,44 @@ class voronoi:
                 for k,v in dict_of_points.items():
                     sumb+= v/sum
                     color = 'red' if v/sum >0.001 else 'blue'
-                    plt.scatter(k[0] , k[1] , color=color , alpha=0.5 )
+                    #plt.scatter(k[0] , k[1] , color=color , alpha=0.5 )
                     #print(f"prob: {v/sum}")
 
                 print(f' sum of probabilities is {sumb}')
                         
                 for i in range(100):
                     x , y = MPFsampling(resultRe , xmin , xmax , ymin , ymax) 
-                    plt.scatter(x, y , color = 'm')       
+                    #plt.scatter(x, y , color = 'm')       
 
-                plotRRT(nodes, sampled_points, status)
+                # plotRRT(nodes, sampled_points, status)
 
+                
                 #move robot on the path of Astar algorithm 
-                #self.moev2(resultRe)
-                plt.show()
-                print("move finishd")
+                if status == "success":
+                    self.move2(nodes)
+
+                #plt.show()
                 self.Target = False
 
 
 
-    def moev2(self, resultRe):
+    def move2(self, nodes):
+
+        nodes = nodes[::-1]
+        for node in nodes:
+            print(f'({node.x}, {node.y}) ' , end="")
+        print()
 
         stepCounter = 0 
-        for nodePath in resultRe:
+        for nodePath in nodes:
            # len  = len (resultRe)
-            self.Ty = nodePath.x
-            self.Ty = nodePath.y
+            Tx = nodePath.x
+            Ty = nodePath.y
+
+            print(f' x: {nodePath.x} , y : {nodePath.y}')
+
             cmdVel = Twist()
-            ww = math.atan2((self.Ty - self.Sy) , (self.Tx - self.Sx) )
+            ww = math.atan2((Ty - self.Sy) , (Tx - self.Sx) )
             ww = math.degrees(ww)
             print("move turn")
             dist = 100
@@ -267,6 +274,8 @@ class voronoi:
                     self.publishvel.publish(cmdVel)
 
                 print(f'dist : {dist}')
+            
+        rospy.loginfo("move finishd")
 
         cmdVel.linear.x = 0
         self.publishvel.publish(cmdVel)
@@ -284,7 +293,7 @@ class voronoi:
         orientation_q = msg.pose.pose.orientation
         orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
         (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
-        #print(yaw)
+
 
     def callbackM(self ,msg):
   
@@ -379,7 +388,7 @@ class voronoi:
             self.result = result
             #plot found path
 
-        self.Target = True
+            self.Target = True
 
     def callbackOdom(self, msg):
 
