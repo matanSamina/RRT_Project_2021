@@ -7,6 +7,7 @@ Created on Thu Sep  5 10:09:21 2019
 @author: Matan Samina & Arseni the man
 """
 
+# VORONOI -> A-STAR -> MPF -> RRT ->  RRT PATH
 
 from numpy.core.fromnumeric import argmax, shape
 from numpy.core.function_base import linspace
@@ -135,34 +136,25 @@ class voronoi:
 
             if self.Target and self.voronoiGraph:
                 
-                for path in self.ver: 
+                self.plotVoroni()
+                if self.mapLM is not None: self.plotMap()
 
-                    xList = list(map(getX , path.path))
-                    yList = list(map(getY , path.path)) 
-                    # plt.scatter(xList, yList , c="gray")
+                # plt.show() #map + voronoi
                 
-                # PLOT MAP
-                if self.mapLM is not None:
-                    maplM = self.mapLM
-                    mapR = rotate(maplM  ,270)
-                    mapR[:,0] = -1*mapR[:,0]
-                    # plt.scatter(mapR[:,0],mapR[:,1])
 
-                
-                # plt.scatter(self.Tx , self.Ty)
+                #plt.scatter(self.Tx , self.Ty)
                 result = self.result
 
-
+                self.plotVoroni()
+                mapR = self.plotMap()
                 # plot path created by Astar on voronoi graph  
-                if self.result is not None:
-                    parent = result[0]
-                    successor = parent
+                if self.result is not None: self.plotAstar(result)
 
-                    for node in result:
-                        parent = node
-                        # plt.plot([successor.x, parent.x], [successor.y, parent.y] , linewidth=5 , color = 'green')
-                        successor = node
 
+                # plt.show() # map + voronoi + astar 
+                  
+                self.plotMap()
+                self.plotAstar(result)
 
                 resultLen = len(result)
                 resultRe = result[::-1]
@@ -179,7 +171,7 @@ class voronoi:
                 ymin , ymax = min(mapR[:,1]) , max(mapR[:,1])
 
                 nodes, sampled_points, status = rrt_mpf(nodes=[NodeRRT(x= self.Sx , y = self.Sy)],
-                        number_of_samples=40,
+                        number_of_samples=100,
                         LAMBDA=1.0,
                         step=0.2,
                         x_goal = self.Tx,  y_goal=self.Ty,
@@ -207,35 +199,69 @@ class voronoi:
                 for k,v in dict_of_points.items():
                     sumb+= v/sum
                     color = 'red' if v/sum >0.001 else 'blue'
-                    #plt.scatter(k[0] , k[1] , color=color , alpha=0.5 )
+                    plt.scatter(k[0] , k[1] , color=color , alpha=0.5 )
                     #print(f"prob: {v/sum}")
-
-                print(f' sum of probabilities is {sumb}')
-                        
-                for i in range(100):
-                    x , y = MPFsampling(resultRe , xmin , xmax , ymin , ymax) 
-                    #plt.scatter(x, y , color = 'm')       
-
-                # plotRRT(nodes, sampled_points, status)
-
                 
+               # plt.show() # map + Astar + MPF
+
+                self.plotMap()
+                print(f' sum of probabilities is {sumb}')
+                            
+                plotRRT(nodes, sampled_points, status)
+
+                pathRRT = []
+                if status == 'success':
+                    path_node = nodes[-1]
+                    
+                    while path_node.parentNode:
+                        # node.parentXY
+                        pathRRT.append(path_node)
+                        parent = path_node.parentNode
+                        path_node = parent    
+                    
+
+
+
                 #move robot on the path of Astar algorithm 
                 if status == "success":
-                    self.move2(nodes)
+                    self.move2(pathRRT)
 
-                #plt.show()
+
                 self.Target = False
 
+    def plotAstar(self, result):
+        parent = result[0]
+        successor = parent
+        for node in result:
+            parent = node
+            plt.plot([successor.x, parent.x], [successor.y, parent.y] , linewidth=5 , color = 'green')
+            successor = node
 
+    def plotVoroni(self):
+        # PLOT VORONOI
+        for path in self.ver: 
+            xList = list(map(getX , path.path))
+            yList = list(map(getY , path.path))
+            plt.scatter(xList, yList , c="gray")
+
+    def plotMap(self):
+
+        maplM = self.mapLM
+        mapR = rotate(maplM  ,270)
+        mapR[:,0] = -1*mapR[:,0]
+        plt.scatter(mapR[:,0],mapR[:,1])
+        return mapR
 
     def move2(self, nodes):
 
         nodes = nodes[::-1]
-        for node in nodes:
-            print(f'({node.x}, {node.y}) ' , end="")
-        print()
+
+        # for node in nodes:
+        #     print(f'({node.x}, {node.y}) ' , end="")
+        # print()
 
         stepCounter = 0 
+
         for nodePath in nodes:
            # len  = len (resultRe)
             Tx = nodePath.x
@@ -248,34 +274,32 @@ class voronoi:
             ww = math.degrees(ww)
             print("move turn")
             dist = 100
-            n = 4
             
             stepCounter +=1
-            if(stepCounter%n == 0):
 
-                while (np.abs(dist) > 0.05):
+            while (np.abs(dist) > 0.05):
+                err = 10
+                while( np.abs(err) > 1):
 
-                    err = 10
-                    while( np.abs(err) > 1):
-
-                        #print(self.orientation)
-                        orList = [self.orientation.x,self.orientation.y,self.orientation.z,self.orientation.w]
-                        (_,_,w) = transformations.euler_from_quaternion(orList)
-                        ww = math.atan2((self.Ty - self.Sy) , (self.Tx - self.Sx) )
-                        err = self.err(ww, w)
-                        cmdVel.angular.z = np.sign(err)*np.abs(err)/18
-                        self.publishvel.publish(cmdVel)
-
-                    cmdVel.angular.z = 0
-                    dist = math.dist([self.Sx , self.Sy] , [self.Tx ,self.Ty ])
-                    #print(f'dist:{dist}')
-                    cmdVel.linear.x = min(0.3, np.abs(dist)/2.5)
-                    #print(min(0.3, np.abs(dist)/3)) 
+                    #print(self.orientation)
+                    orList = [self.orientation.x,self.orientation.y,self.orientation.z,self.orientation.w]
+                    (_,_,w) = transformations.euler_from_quaternion(orList)
+                    ww = math.atan2((Ty - self.Sy) , (Tx - self.Sx) )
+                    err = self.err(ww, w)
+                    cmdVel.angular.z = np.sign(err)*np.abs(err)/18
                     self.publishvel.publish(cmdVel)
 
-                print(f'dist : {dist}')
+                cmdVel.angular.z = 0
+                dist = math.dist([self.Sx , self.Sy] , [Tx ,Ty ])
+                #print(f'dist:{dist}')
+                cmdVel.linear.x = min(0.3, np.abs(dist)/2.5)
+                #print(min(0.3, np.abs(dist)/3)) 
+                self.publishvel.publish(cmdVel)
+
+                #print(f'dist : {dist}')
             
         rospy.loginfo("move finishd")
+        rospy.loginfo(f'num of steps is {stepCounter}')
 
         cmdVel.linear.x = 0
         self.publishvel.publish(cmdVel)
@@ -293,7 +317,6 @@ class voronoi:
         orientation_q = msg.pose.pose.orientation
         orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
         (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
-
 
     def callbackM(self ,msg):
   
@@ -336,7 +359,6 @@ class voronoi:
         print(f'number of nodes : {len(nodes)}')
         self.nodes = nodes
         self.voronoiGraph = True
-
         
     def callbackTarget(self, msg):
 
