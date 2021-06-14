@@ -139,19 +139,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-# def rrt_simple(nodes, number_of_samples, step, x_goal, y_goal):
-#     for i in range(number_of_samples):
-#         x_rand, y_rand = sample_random_point()
-#         sampled_points.append((x_rand, y_rand))
-#         x_nearest, y_nearest = Nearest(x_rand, y_rand, nodes)
-#         x_new, y_new = Steer(x_nearest, y_nearest, x_rand, y_rand, step)
-#         if ObstacleFree(x_nearest, y_nearest, x_new, y_new):
-#             nodes.append(NodeRRT(x_new, y_new, parent=(x_nearest, y_nearest)))
-#             if dist((x_new, y_new), (x_goal, y_goal)) < step:
-#                 nodes.append(NodeRRT(x_goal, y_goal, parent=(x_new, y_new)))
-#                 return nodes
-#             rewire()
-#
-#         # plot(nodes)
-#     return None
