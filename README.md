@@ -7,7 +7,7 @@ Robot's Control and Navigation Course (2021 Semester B).
 
 [Optimal Path Planning Using Generalized Voronoi Graph and Multiple Potential Functions](https://ieeexplore.ieee.org/document/8948325)
 
-## The Structure
+## Structure
 
 The main parts of code are located in [/src](/src) directory.
 
@@ -34,7 +34,7 @@ Gazebo (1) | Gazebo (2)
 ------------ | -------------
 ![](static/Picture2.png) | ![](static/Picture3.png)
 
-## The Main Logic of The Algorithm
+## Main Logic of The Algorithm
 
 ### Voronoi Graph
 
