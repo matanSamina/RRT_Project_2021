@@ -76,6 +76,17 @@ Distribution around this path | RRT solution
 We used `move2()` method inside [`main_find_path.py`](/src/main_find_path.py)
 to navigate robot through the found path.
 
+## Improvement Suggestions
+
+The proposed algorithm can be conveniently implemented on plethora kinds of robots.
+The calculations do not demand many resources. Easy to understand basic principles.
+
+As an improvements of our implementation, we can suggest:
+
+- Tuning step size ( the length of a branch in RRT) – it is apple to speed up the convergence
+- Tuning sampling parameters – better distribution approximation can increase convergence as well
+- Adding robot constrains – consider dynamics of a specific robot
+
 ## Credits
 
 - [ROS - `tuw_voronoi_graph`](http://wiki.ros.org/tuw_voronoi_graph)
