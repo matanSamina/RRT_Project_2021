@@ -47,7 +47,7 @@ Map | Graph
 
 ### A* Path
 
-Next stage, we used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
+Next, we used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
 
 Graph | Graph with path
 ------------ | -------------
