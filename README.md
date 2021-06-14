@@ -9,6 +9,8 @@ Robot's Control and Navigation Course (2021 Semester B).
 
 ## The Structure
 
+The main parts of code are located in [/src](/src) directory.
+
 [`a_star.py`](/src/astar.py) - our simple and generic implementation of A*.
 More explanation can be found [here](https://github.com/Arseni1919/A_star_Implementation).
 
