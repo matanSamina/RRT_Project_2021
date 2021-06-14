@@ -25,9 +25,9 @@ The file contains ROS node that responsible to build a path for robot.
 
 ## Credits
 
-[ROS - `tuw_voronoi_graph`](http://wiki.ros.org/tuw_voronoi_graph)
-[ROS - Odometry](http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html)
-[ROS - Point](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Point.html)
+- [ROS - `tuw_voronoi_graph`](http://wiki.ros.org/tuw_voronoi_graph)
+- [ROS - Odometry](http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html)
+- [ROS - Point](http://docs.ros.org/en/melodic/api/geometry_msgs/html/msg/Point.html)
 
 
 
