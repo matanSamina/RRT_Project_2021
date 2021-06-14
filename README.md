@@ -22,6 +22,21 @@ in [this](https://github.com/Arseni1919/Simple_Implementation_of_RRT) repository
 [`main_find_path.py`](/src/main_find_path.py) - the main flow of path planning.
 The file contains ROS node that responsible to build a path for robot.
 
+## Simulation
+
+We worked with TurtleBot3 robot, Gazebo simulation and Rviz.
+
+TurtleBot3 | Rviz
+------------ | -------------
+![](static/Picture1.png) | ![](static/Picture4.png)
+
+Gazebo (1) | Gazebo (2)
+------------ | -------------
+![](static/Picture2.png) | ![](static/Picture3.png)
+
+## The Main Logic of The Algorithm
+
+### Find
 
 ## Credits
 

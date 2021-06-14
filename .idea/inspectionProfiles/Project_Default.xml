@@ -1,0 +1,218 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="JupyterPackageInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="194">
+            <item index="0" class="java.lang.String" itemvalue="mysql-client" />
+            <item index="1" class="java.lang.String" itemvalue="rqt-image-view" />
+            <item index="2" class="java.lang.String" itemvalue="Babel" />
+            <item index="3" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="4" class="java.lang.String" itemvalue="roslz4" />
+            <item index="5" class="java.lang.String" itemvalue="gitdb" />
+            <item index="6" class="java.lang.String" itemvalue="torchvision" />
+            <item index="7" class="java.lang.String" itemvalue="path" />
+            <item index="8" class="java.lang.String" itemvalue="bleach" />
+            <item index="9" class="java.lang.String" itemvalue="monotonic" />
+            <item index="10" class="java.lang.String" itemvalue="rqt-msg" />
+            <item index="11" class="java.lang.String" itemvalue="rosunit" />
+            <item index="12" class="java.lang.String" itemvalue="nbclassic" />
+            <item index="13" class="java.lang.String" itemvalue="rospy" />
+            <item index="14" class="java.lang.String" itemvalue="diagnostic-analysis" />
+            <item index="15" class="java.lang.String" itemvalue="bravado-core" />
+            <item index="16" class="java.lang.String" itemvalue="tensorboard" />
+            <item index="17" class="java.lang.String" itemvalue="roslib" />
+            <item index="18" class="java.lang.String" itemvalue="laser-geometry" />
+            <item index="19" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="20" class="java.lang.String" itemvalue="rqt-robot-dashboard" />
+            <item index="21" class="java.lang.String" itemvalue="bravado" />
+            <item index="22" class="java.lang.String" itemvalue="rviz" />
+            <item index="23" class="java.lang.String" itemvalue="rsa" />
+            <item index="24" class="java.lang.String" itemvalue="rqt-robot-monitor" />
+            <item index="25" class="java.lang.String" itemvalue="smmap" />
+            <item index="26" class="java.lang.String" itemvalue="cffi" />
+            <item index="27" class="java.lang.String" itemvalue="numpy" />
+            <item index="28" class="java.lang.String" itemvalue="master-discovery-fkie" />
+            <item index="29" class="java.lang.String" itemvalue="rqt-graph" />
+            <item index="30" class="java.lang.String" itemvalue="rqt-web" />
+            <item index="31" class="java.lang.String" itemvalue="cv-bridge" />
+            <item index="32" class="java.lang.String" itemvalue="node-manager-fkie" />
+            <item index="33" class="java.lang.String" itemvalue="qt-gui-cpp" />
+            <item index="34" class="java.lang.String" itemvalue="rqt-top" />
+            <item index="35" class="java.lang.String" itemvalue="rqt-gui" />
+            <item index="36" class="java.lang.String" itemvalue="jupyter" />
+            <item index="37" class="java.lang.String" itemvalue="gennodejs" />
+            <item index="38" class="java.lang.String" itemvalue="prompt-toolkit" />
+            <item index="39" class="java.lang.String" itemvalue="tf2-geometry-msgs" />
+            <item index="40" class="java.lang.String" itemvalue="jsonpointer" />
+            <item index="41" class="java.lang.String" itemvalue="tf" />
+            <item index="42" class="java.lang.String" itemvalue="qt-gui-py-common" />
+            <item index="43" class="java.lang.String" itemvalue="rqt-action" />
+            <item index="44" class="java.lang.String" itemvalue="multidict" />
+            <item index="45" class="java.lang.String" itemvalue="pytz" />
+            <item index="46" class="java.lang.String" itemvalue="rqt-bag-plugins" />
+            <item index="47" class="java.lang.String" itemvalue="controller-manager" />
+            <item index="48" class="java.lang.String" itemvalue="traitlets" />
+            <item index="49" class="java.lang.String" itemvalue="absl-py" />
+            <item index="50" class="java.lang.String" itemvalue="protobuf" />
+            <item index="51" class="java.lang.String" itemvalue="genpy" />
+            <item index="52" class="java.lang.String" itemvalue="joblib" />
+            <item index="53" class="java.lang.String" itemvalue="rosboost-cfg" />
+            <item index="54" class="java.lang.String" itemvalue="rqt-tf-tree" />
+            <item index="55" class="java.lang.String" itemvalue="jupyter-server" />
+            <item index="56" class="java.lang.String" itemvalue="fsspec" />
+            <item index="57" class="java.lang.String" itemvalue="topic-tools" />
+            <item index="58" class="java.lang.String" itemvalue="pyzmq" />
+            <item index="59" class="java.lang.String" itemvalue="xacro" />
+            <item index="60" class="java.lang.String" itemvalue="path.py" />
+            <item index="61" class="java.lang.String" itemvalue="rosnode" />
+            <item index="62" class="java.lang.String" itemvalue="rosbag" />
+            <item index="63" class="java.lang.String" itemvalue="base-local-planner" />
+            <item index="64" class="java.lang.String" itemvalue="roslint" />
+            <item index="65" class="java.lang.String" itemvalue="rqt-nav-view" />
+            <item index="66" class="java.lang.String" itemvalue="default-cfg-fkie" />
+            <item index="67" class="java.lang.String" itemvalue="pytorch-lightning" />
+            <item index="68" class="java.lang.String" itemvalue="rosmake" />
+            <item index="69" class="java.lang.String" itemvalue="neptune-client" />
+            <item index="70" class="java.lang.String" itemvalue="webcolors" />
+            <item index="71" class="java.lang.String" itemvalue="sklearn" />
+            <item index="72" class="java.lang.String" itemvalue="rqt-moveit" />
+            <item index="73" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="74" class="java.lang.String" itemvalue="rosservice" />
+            <item index="75" class="java.lang.String" itemvalue="genlisp" />
+            <item index="76" class="java.lang.String" itemvalue="rqt-publisher" />
+            <item index="77" class="java.lang.String" itemvalue="rosparam" />
+            <item index="78" class="java.lang.String" itemvalue="camera-calibration-parsers" />
+            <item index="79" class="java.lang.String" itemvalue="python-qt-binding" />
+            <item index="80" class="java.lang.String" itemvalue="parso" />
+            <item index="81" class="java.lang.String" itemvalue="ipython" />
+            <item index="82" class="java.lang.String" itemvalue="packaging" />
+            <item index="83" class="java.lang.String" itemvalue="smclib" />
+            <item index="84" class="java.lang.String" itemvalue="rqt-shell" />
+            <item index="85" class="java.lang.String" itemvalue="aiohttp" />
+            <item index="86" class="java.lang.String" itemvalue="rfc3987" />
+            <item index="87" class="java.lang.String" itemvalue="sensor-msgs" />
+            <item index="88" class="java.lang.String" itemvalue="rosgraph" />
+            <item index="89" class="java.lang.String" itemvalue="rqt-console" />
+            <item index="90" class="java.lang.String" itemvalue="tf-conversions" />
+            <item index="91" class="java.lang.String" itemvalue="rostest" />
+            <item index="92" class="java.lang.String" itemvalue="rqt-py-common" />
+            <item index="93" class="java.lang.String" itemvalue="Pygments" />
+            <item index="94" class="java.lang.String" itemvalue="rqt-joint-trajectory-controller" />
+            <item index="95" class="java.lang.String" itemvalue="gazebo-ros" />
+            <item index="96" class="java.lang.String" itemvalue="rqt-plot" />
+            <item index="97" class="java.lang.String" itemvalue="qtconsole" />
+            <item index="98" class="java.lang.String" itemvalue="master-sync-fkie" />
+            <item index="99" class="java.lang.String" itemvalue="terminado" />
+            <item index="100" class="java.lang.String" itemvalue="GitPython" />
+            <item index="101" class="java.lang.String" itemvalue="rqt-launch" />
+            <item index="102" class="java.lang.String" itemvalue="controller-manager-tests" />
+            <item index="103" class="java.lang.String" itemvalue="jupyter-client" />
+            <item index="104" class="java.lang.String" itemvalue="ipykernel" />
+            <item index="105" class="java.lang.String" itemvalue="nbconvert" />
+            <item index="106" class="java.lang.String" itemvalue="attrs" />
+            <item index="107" class="java.lang.String" itemvalue="simplejson" />
+            <item index="108" class="java.lang.String" itemvalue="jedi" />
+            <item index="109" class="java.lang.String" itemvalue="joint-state-publisher" />
+            <item index="110" class="java.lang.String" itemvalue="rosmsg" />
+            <item index="111" class="java.lang.String" itemvalue="msgpack" />
+            <item index="112" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="113" class="java.lang.String" itemvalue="catkin" />
+            <item index="114" class="java.lang.String" itemvalue="pandocfilters" />
+            <item index="115" class="java.lang.String" itemvalue="roswtf" />
+            <item index="116" class="java.lang.String" itemvalue="rqt-reconfigure" />
+            <item index="117" class="java.lang.String" itemvalue="jsonref" />
+            <item index="118" class="java.lang.String" itemvalue="requests" />
+            <item index="119" class="java.lang.String" itemvalue="sniffio" />
+            <item index="120" class="java.lang.String" itemvalue="websocket-client" />
+            <item index="121" class="java.lang.String" itemvalue="tf2-py" />
+            <item index="122" class="java.lang.String" itemvalue="diagnostic-updater" />
+            <item index="123" class="java.lang.String" itemvalue="tensorboard-plugin-wit" />
+            <item index="124" class="java.lang.String" itemvalue="message-filters" />
+            <item index="125" class="java.lang.String" itemvalue="rqt-py-console" />
+            <item index="126" class="java.lang.String" itemvalue="rqt-gui-py" />
+            <item index="127" class="java.lang.String" itemvalue="actionlib" />
+            <item index="128" class="java.lang.String" itemvalue="scipy" />
+            <item index="129" class="java.lang.String" itemvalue="tornado" />
+            <item index="130" class="java.lang.String" itemvalue="google-auth-oauthlib" />
+            <item index="131" class="java.lang.String" itemvalue="diagnostic-common-diagnostics" />
+            <item index="132" class="java.lang.String" itemvalue="roslaunch" />
+            <item index="133" class="java.lang.String" itemvalue="dynamic-reconfigure" />
+            <item index="134" class="java.lang.String" itemvalue="torch" />
+            <item index="135" class="java.lang.String" itemvalue="smach" />
+            <item index="136" class="java.lang.String" itemvalue="rqt-robot-steering" />
+            <item index="137" class="java.lang.String" itemvalue="pandas" />
+            <item index="138" class="java.lang.String" itemvalue="rqt-logger-level" />
+            <item index="139" class="java.lang.String" itemvalue="jupyter-console" />
+            <item index="140" class="java.lang.String" itemvalue="cachetools" />
+            <item index="141" class="java.lang.String" itemvalue="yarl" />
+            <item index="142" class="java.lang.String" itemvalue="Pillow" />
+            <item index="143" class="java.lang.String" itemvalue="rqt-bag" />
+            <item index="144" class="java.lang.String" itemvalue="threadpoolctl" />
+            <item index="145" class="java.lang.String" itemvalue="rqt-dep" />
+            <item index="146" class="java.lang.String" itemvalue="bondpy" />
+            <item index="147" class="java.lang.String" itemvalue="rqt-service-caller" />
+            <item index="148" class="java.lang.String" itemvalue="QtPy" />
+            <item index="149" class="java.lang.String" itemvalue="camera-calibration" />
+            <item index="150" class="java.lang.String" itemvalue="neptune-notebooks" />
+            <item index="151" class="java.lang.String" itemvalue="pluginlib" />
+            <item index="152" class="java.lang.String" itemvalue="controller-manager-msgs" />
+            <item index="153" class="java.lang.String" itemvalue="certifi" />
+            <item index="154" class="java.lang.String" itemvalue="anyio" />
+            <item index="155" class="java.lang.String" itemvalue="Markdown" />
+            <item index="156" class="java.lang.String" itemvalue="notebook" />
+            <item index="157" class="java.lang.String" itemvalue="rqt-rviz" />
+            <item index="158" class="java.lang.String" itemvalue="kiwisolver" />
+            <item index="159" class="java.lang.String" itemvalue="gazebo-plugins" />
+            <item index="160" class="java.lang.String" itemvalue="rosmaster" />
+            <item index="161" class="java.lang.String" itemvalue="genmsg" />
+            <item index="162" class="java.lang.String" itemvalue="gym" />
+            <item index="163" class="java.lang.String" itemvalue="image-geometry" />
+            <item index="164" class="java.lang.String" itemvalue="rqt-runtime-monitor" />
+            <item index="165" class="java.lang.String" itemvalue="roscreate" />
+            <item index="166" class="java.lang.String" itemvalue="tf2-ros" />
+            <item index="167" class="java.lang.String" itemvalue="angles" />
+            <item index="168" class="java.lang.String" itemvalue="async-timeout" />
+            <item index="169" class="java.lang.String" itemvalue="ptyprocess" />
+            <item index="170" class="java.lang.String" itemvalue="cloudpickle" />
+            <item index="171" class="java.lang.String" itemvalue="interactive-markers" />
+            <item index="172" class="java.lang.String" itemvalue="rosclean" />
+            <item index="173" class="java.lang.String" itemvalue="tf2-kdl" />
+            <item index="174" class="java.lang.String" itemvalue="qt-dotgraph" />
+            <item index="175" class="java.lang.String" itemvalue="gencpp" />
+            <item index="176" class="java.lang.String" itemvalue="urllib3" />
+            <item index="177" class="java.lang.String" itemvalue="jupyterlab" />
+            <item index="178" class="java.lang.String" itemvalue="qt-gui" />
+            <item index="179" class="java.lang.String" itemvalue="resource-retriever" />
+            <item index="180" class="java.lang.String" itemvalue="rqt-topic" />
+            <item index="181" class="java.lang.String" itemvalue="jupyterlab-server" />
+            <item index="182" class="java.lang.String" itemvalue="nbformat" />
+            <item index="183" class="java.lang.String" itemvalue="swagger-spec-validator" />
+            <item index="184" class="java.lang.String" itemvalue="smach-ros" />
+            <item index="185" class="java.lang.String" itemvalue="prometheus-client" />
+            <item index="186" class="java.lang.String" itemvalue="rqt-srv" />
+            <item index="187" class="java.lang.String" itemvalue="tqdm" />
+            <item index="188" class="java.lang.String" itemvalue="rostopic" />
+            <item index="189" class="java.lang.String" itemvalue="geneus" />
+            <item index="190" class="java.lang.String" itemvalue="strict-rfc3339" />
+            <item index="191" class="java.lang.String" itemvalue="grpcio" />
+            <item index="192" class="java.lang.String" itemvalue="rqt-pose-view" />
+            <item index="193" class="java.lang.String" itemvalue="google-auth" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N803" />
+          <option value="N802" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
