@@ -9,7 +9,11 @@ Robot's Control and Navigation Course (2021 Semester B).
 
 ## The Structure
 
-[`a_star`](/src/astar.py)
+[`a_star.py`](/src/astar.py) - our simple and generic implementation of A*.
+More explanation can be found [here](https://github.com/Arseni1919/A_star_Implementation).
+
+[`RRT.py`](/src/astar.py) - our simple and generic implementation of RRT.
+More explanation can be found [here](https://github.com/Arseni1919/Simple_Implementation_of_RRT).
 
 ## Credits
 
