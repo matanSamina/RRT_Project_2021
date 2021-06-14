@@ -36,7 +36,7 @@ Gazebo (1) | Gazebo (2)
 
 ## The Main Logic of The Algorithm
 
-### Voronoi
+### Voronoi Graph
 
 We used [`tuw_voronoi_graph`](http://wiki.ros.org/tuw_voronoi_graph) package to create Voronoi graph.
 Then, we transferred it to **x**, **y** coordinates.
@@ -45,13 +45,36 @@ Map | Graph
 ------------ | -------------
 ![](static/Picture5.png) | ![](static/Picture6.png)
 
-### A* path
+### A* Path
 
 We used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
 
 Graph | Graph with path
 ------------ | -------------
 ![](static/Picture6.png) | ![](static/Picture7.png)
+
+### MPF Distribution
+
+We used `MPFsampling()` function inside [`main_find_path.py`](/src/main_find_path.py)
+to create the proper distribution that we will use during RRT sampling process.
+
+Graph with path | Distribution around this path
+------------ | -------------
+![](static/Picture7.png) | ![](static/Picture8.png)
+
+### RRT algorithm
+
+We used [`RRT.py`](/src/astar.py) to find the desired path to the target
+using RRT sampling process with a given MPF distribution.
+
+Distribution around this path | RRT solution
+------------ | -------------
+![](static/Picture8.png) | ![](static/Picture9.png)
+
+### Movement
+
+We used `move2()` method inside [`main_find_path.py`](/src/main_find_path.py)
+to navigate robot through the found path.
 
 ## Credits
 
