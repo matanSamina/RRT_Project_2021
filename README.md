@@ -76,6 +76,8 @@ Distribution around this path | RRT solution
 We used `move2()` method inside [`main_find_path.py`](/src/main_find_path.py)
 to navigate robot through the found path.
 
+[📹🏁🤖 An example of an experiment in YouTube](https://www.youtube.com/watch?v=Je9pdfdcSs0&ab_channel=ArsPerchik)
+
 ## Improvement Suggestions
 
 The proposed algorithm can be conveniently implemented on plethora kinds of robots.
