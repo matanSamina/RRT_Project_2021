@@ -9,7 +9,7 @@ Robot's Control and Navigation Course (2021 Semester B).
 
 ## The Structure
 
-[`a_star`](/a_star)
+[`a_star`](/src/astar.py)
 
 ## Credits
 
