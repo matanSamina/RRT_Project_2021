@@ -47,7 +47,7 @@ Map | Graph
 
 ### A* Path
 
-We used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
+Next stage, we used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
 
 Graph | Graph with path
 ------------ | -------------
@@ -64,7 +64,7 @@ Graph with path | Distribution around this path
 
 ### RRT algorithm
 
-We used [`RRT.py`](/src/astar.py) to find the desired path to the target
+Then, we used [`RRT.py`](/src/astar.py) to find the desired path to the target
 using RRT sampling process with a given MPF distribution.
 
 Distribution around this path | RRT solution
@@ -73,7 +73,7 @@ Distribution around this path | RRT solution
 
 ### Movement
 
-We used `move2()` method inside [`main_find_path.py`](/src/main_find_path.py)
+And finally, we used `move2()` method inside [`main_find_path.py`](/src/main_find_path.py)
 to navigate robot through the found path.
 
 ### [🚀 📹 🚗 YouTube video of of an experiment](https://www.youtube.com/watch?v=Je9pdfdcSs0&ab_channel=ArsPerchik)
