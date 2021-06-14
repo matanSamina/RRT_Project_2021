@@ -36,7 +36,22 @@ Gazebo (1) | Gazebo (2)
 
 ## The Main Logic of The Algorithm
 
-### Find
+### Voronoi
+
+We used [`tuw_voronoi_graph`](http://wiki.ros.org/tuw_voronoi_graph) package to create Voronoi graph.
+Then, we transferred it to **x**, **y** coordinates.
+
+Map | Graph
+------------ | -------------
+![](static/Picture5.png) | ![](static/Picture6.png)
+
+### A* path
+
+We used [`a_star.py`](/src/astar.py) package to create the shortest path inside Voronoi graph.
+
+Graph | Graph with path
+------------ | -------------
+![](static/Picture6.png) | ![](static/Picture7.png)
 
 ## Credits
 
